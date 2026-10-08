@@ -38,11 +38,13 @@ export function Projects() {
               <p className="mb-5 text-sm leading-relaxed text-[#555] dark:text-[#888]">
                 &ldquo;{project.tagline}&rdquo;
               </p>
-              <div className="mb-5 flex flex-wrap gap-2">
-                {project.tech.map((tag) => (
-                  <TechBadge key={tag} name={tag} />
-                ))}
-              </div>
+              {project.tech.length > 0 && (
+                <div className="mb-5 flex flex-wrap gap-2">
+                  {project.tech.map((tag) => (
+                    <TechBadge key={tag} name={tag} />
+                  ))}
+                </div>
+              )}
               {(project.liveUrl || project.githubUrl) && (
                 <div className="flex items-center gap-2.5">
                   {project.liveUrl && (

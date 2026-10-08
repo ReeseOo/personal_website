@@ -139,7 +139,9 @@ export function Experience() {
                               {role.title}
                             </p>
                             <p className="mt-0.5 text-sm text-[#555] dark:text-[#888]">
-                              {role.startDate} – {role.endDate} · {role.location} · {role.type}
+                              {[`${role.startDate} – ${role.endDate}`, role.location, role.type]
+                                .filter(Boolean)
+                                .join(" · ")}
                             </p>
                           </div>
                           {hasDetails && (
